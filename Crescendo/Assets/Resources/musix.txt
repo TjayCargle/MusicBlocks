@@ -1,0 +1,39 @@
+-1
+t| Ok! Tonight is the night!
+t| My favorite band Musix is hosting tryouts for a new revovling member.
+t| I've been practicing really hard and I know I can get in!
+r| Get out of my way pipsqueak!
+t| Hey! I'm up next, your cutting.
+r| You realize you can't just play your baby piano. 
+r| You need to be able to play all instruments, dance, and sing.
+t| I know... and I can do all those things. Just watch.
+r| If anyone is getting into Musix, its me, the raddest, badest, madest, man, RADD!
+t| You still have to wait your turn....
+t| I'll show you what I could do
+/
+-2
+t| Yea! I did it!
+r| Don't get too excited, looks like we both made it to the next stage.
+r| If I were you, I'd run home now since RADD is going to steal the show!
+t| I'll see you at the next event then.
+/
+-3
+t| Ok this time I'm playing along with the guitar. I've got this!
+r| Don't get too excited, looks like we both made it to the next stage.
+r| If I were you, I'd run home now since RADD is going to steal the show!
+t| I'll see you at the next event then.
+/
+-4
+t| Another event down!
+r| NOOOOO!.
+t| What happened
+r| I'm SOO Radd that these guys don't want me STEALING THE SPOTLIGHT... so thats it.
+t| Awe cheer up, you'll have another chance again, I'm sure of it.
+r| Whatever... this is lame anyway.
+/
+-5
+t| This is the last event.
+t| Time for me to give it my all!
+/
+-6
+t| I did it!
