@@ -14,7 +14,7 @@ public class GridManager : MonoBehaviour
     public int height = 15;
     public int width = 30;
     public bool isSetup = false;
-
+    public GameObject visableParent = null;
     public void Setup()
     {
         CreateGrid();
@@ -33,7 +33,7 @@ public class GridManager : MonoBehaviour
     {
         if (created == false)
         {
-            if(PlayerPrefs.HasKey("gridWidth"))
+            if (PlayerPrefs.HasKey("gridWidth"))
             {
                 width = PlayerPrefs.GetInt("gridWidth");
                 Debug.Log("w = " + width);
@@ -47,9 +47,14 @@ public class GridManager : MonoBehaviour
             //  invisibleGrid = new Transform[width, height];
 
             int tileCount = width * height;
-            GameObject visableParent = new GameObject();
+
+            if (visableParent != null)
+            {
+                //visableParent = new GameObject();
+            }
             inactiveParent = new GameObject();
             Vector3 startLocation = new Vector3(0.0f, 0.0f, 0.0f);
+            float scaleModifer = 17.0f;
             if (block != null)
             {
 
@@ -57,6 +62,7 @@ public class GridManager : MonoBehaviour
                 {
                     GameObject visibleBlock = Instantiate<GameObject>(block, visableParent.transform);
                     visibleBlock.name = "Visible: " + i;
+                    visibleBlock.transform.localScale = transform.localScale * scaleModifer;
                     visibleGrid.Add(visibleBlock);
                 }
                 for (int i = 0; i < width; i++)
@@ -65,12 +71,12 @@ public class GridManager : MonoBehaviour
                     for (int j = 0; j < height; j++)
                     {
                         int mapIndex = TwoToOneD(j, width, i);
-                        float xLocation = startLocation.x + i;
+                        float xLocation = startLocation.x + i + (scaleModifer * 1.5f * i) - 410;
 
 
-                        float yLocation = startLocation.y + j;
+                        float yLocation = startLocation.y + j + (scaleModifer* 1.5f * j) - 260;
 
-                        visibleGrid[mapIndex].transform.position = new Vector3(xLocation, yLocation, 1.0f);
+                        visibleGrid[mapIndex].transform.localPosition = new Vector3(xLocation, yLocation, 1.0f);
                     }
                 }
             }
@@ -90,7 +96,7 @@ public class GridManager : MonoBehaviour
         {
             if (hasLine(i, width, height))
             {
-               // Debug.Log("Deleting! " + i);
+                // Debug.Log("Deleting! " + i);
                 deleteLine(i, width, height);
             }
 
@@ -159,5 +165,5 @@ public class GridManager : MonoBehaviour
     {
         return (y * width) + x;
     }
-  
+
 }

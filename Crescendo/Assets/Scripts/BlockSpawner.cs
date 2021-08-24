@@ -19,7 +19,7 @@ public class BlockSpawner : MonoBehaviour
     public List<int> testData = new List<int>();
     public WinLoseControl winLose = null;
     public static bool gamePaused = false;
-
+    public GameObject SpawnParent = null;
 
     public MoveBlock GetBlock(int possible = -1)
     {
@@ -39,7 +39,8 @@ public class BlockSpawner : MonoBehaviour
         {
             possible = Random.Range(0, possibleBlocks.Length);
         }
-        someBlock = Instantiate(possibleBlocks[possible]).GetComponent<MoveBlock>();
+        someBlock = Instantiate(possibleBlocks[possible], SpawnParent.transform).GetComponent<MoveBlock>();
+        someBlock.transform.localScale = new Vector3(17, 17, 1);
         someBlock.inUse = true;
       
         availableBlocks.Add(someBlock);
